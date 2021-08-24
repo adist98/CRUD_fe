@@ -13,7 +13,7 @@ function App() {
   const [updateTask, setUpdateTask] = useState('');
   const [taskList, setTaskList] = useState([])
   useEffect(() => {
-    Axios.get("http://15.206.67.212/readtodo").then((response) => {
+    Axios.get("http://alb-148907300.ap-south-1.elb.amazonaws.com/readtodo").then((response) => {
       console.log(response)
       setTaskList(response.data)
     })
@@ -21,17 +21,17 @@ function App() {
   }, [updateTask,task,taskList])
   const addTask = () => {
     if(task !== ''){
-      Axios.post("http://15.206.67.212/createtodo",{description: task})
+      Axios.post("http://alb-148907300.ap-south-1.elb.amazonaws.com/createtodo",{description: task})
     }
   }
   const updateTAsk = (id) => {
    
-      Axios.post("http://15.206.67.212/updatetodo",{id: id, description: updateTask})
+      Axios.post("http://alb-148907300.ap-south-1.elb.amazonaws.com/updatetodo",{id: id, description: updateTask})
    
   }
   const deleteTask = (id) => {
    
-    Axios.post("http://15.206.67.212/deletetodo",{id: id})
+    Axios.post("http://alb-148907300.ap-south-1.elb.amazonaws.com/deletetodo",{id: id})
  
 }
 
