@@ -1,0 +1,23 @@
+body {
+  color: white;
+  background-color: #191919;
+}
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+input {
+  width: 200px;
+  height: 20px;
+  margin: 5px;
+}
+
+.card{
+  border: 1px solid white;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
